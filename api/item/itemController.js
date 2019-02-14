@@ -19,7 +19,10 @@ module.exports = {
         item.desc = req.body.desc
         item.save(function(err) {
             if (err) res.send(err)
-            res.status(200).json({ message: 'Item Created' })
+            res.status(200).json({
+                message: 'Item Created',
+                SUCCESS: item,
+            })
         })
     },
     update: (req, res) => {
@@ -29,7 +32,10 @@ module.exports = {
             item.desc = req.body.desc
             item.save(function(err) {
                 if (err) res.send(err)
-                res.status(200).json({ message: 'Update successfully' })
+                res.status(200).json({
+                    UPDATED: item,
+                    message: 'Update successfully'
+                })
             })
         })
     },
@@ -40,7 +46,10 @@ module.exports = {
             },
             function(err, item) {
                 if (err) res.send(err)
-                res.status(200).json({ message: 'Delete Successfully' })
+                res.status(200).json({
+                    REMOVED: item,
+                    message: 'Delete Successfully'
+                })
             }
         )
     },

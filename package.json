@@ -2,22 +2,29 @@
   "name": "express-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "test": " ./node_modules/mocha/bin/mocha test/**/**.js --timeout 10000",
-    "dev": "./node_modules/nodemon/bin/nodemon.js app.js",
-    "format": "npx prettier --write api/**/**.js && npx prettier --write app.js"
+    "test:api": " ./node_modules/mocha/bin/mocha test/api/**.js --timeout 10000",
+    "test:all": "npm run test:api",
+    "dev": "./node_modules/nodemon/bin/nodemon.js",
+    "format:api": "npx prettier --write api/**/**.js",
+    "format:test": "npx prettier --write test/api/**/**.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "WTFPL",
   "dependencies": {
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "module-alias": "^2.2.0",
     "mongoose": "^5.4.10",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "swagger-jsdoc": "^3.0.3",
+    "swagger-ui-express": "^4.0.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",

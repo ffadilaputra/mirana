@@ -5,10 +5,11 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const router = require('@config/routes')
-
-
+const swaggerUi = require('swagger-ui-express')
+const swaggerSpec = require('@config/swagger')
 const app = express()
 dotenv.config()
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -29,6 +30,8 @@ app.use(router)
 app.get('/', (req, res) => {
     res.send('It works')
 })
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Run the app server
 if(!module.parent){
