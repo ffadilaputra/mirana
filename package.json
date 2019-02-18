@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test:api": " ./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha test/api/**.js --timeout 10000",
-    "test:all": "./node_modules/nyc/bin/nyc.js npm run test:api",
-    "dev": "./node_modules/nodemon/bin/nodemon.js",
+    "test:api": "nyc mocha test/api/**.js --timeout 10000",
+    "test:all": "nyc npm run test:api",
+    "dev": "nodemon app.js",
     "format:api": "npx prettier --write api/**/**.js",
     "format:test": "npx prettier --write test/api/**/**.js"
   },
@@ -36,8 +36,12 @@
     "should": "^13.2.3"
   },
   "_moduleAliases": {
-    "@root": ".",
     "@api": "api",
     "@config": "api/config"
+  },
+  "bin": {
+    "mocha": "./node_modules/mocha/bin/mocha",
+    "nodemon": "./node_modules/nodemon/bin/nodemon.js",
+    "nyc": "./node_modules/nyc/bin/nyc.js"
   }
 }
