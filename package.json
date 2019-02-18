@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test:api": " ./node_modules/mocha/bin/mocha test/api/**.js --timeout 10000",
-    "test:all": "npm run test:api",
+    "test:api": " ./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha test/api/**.js --timeout 10000",
+    "test:all": "./node_modules/nyc/bin/nyc.js npm run test:api",
     "dev": "./node_modules/nodemon/bin/nodemon.js",
     "format:api": "npx prettier --write api/**/**.js",
     "format:test": "npx prettier --write test/api/**/**.js"
@@ -31,6 +31,7 @@
     "chai-http": "^4.2.1",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.9",
+    "nyc": "^13.3.0",
     "prettier": "1.16.4",
     "should": "^13.2.3"
   },
