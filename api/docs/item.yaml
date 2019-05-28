@@ -26,10 +26,17 @@ paths:
           description: OK
   /item/{id}:
     get:
-      tags:
-        - item
-      summary: Get a item record by ID.
-      description: A detailed description of the operation.Use markdown for rich text representation,such as **bold**, *italic*, and [links](https://swagger.io).
+      summary: Get a item by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the user to get
+      responses:
+        '200':
+          description: OK
     put:
       tags:
         - item
@@ -40,6 +47,9 @@ paths:
           name: 'Update exiting name'
           desc: 'Update exiting description'
           required: false
+      responses:
+        '200':
+          description: OK
     delete:
       tags:
         - item

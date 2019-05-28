@@ -10,8 +10,8 @@ const swaggerSpec = require('@config/swagger')
 const app = express()
 dotenv.config()
 
-
 app.use(bodyParser.json())
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json({ type: 'application/json' }))
 app.use(morgan('tiny'))
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 // Run the app server
-if(!module.parent){
+if (!module.parent) {
     app.listen(port, () => console.log(`Magic happen at ${port}`))
 }
 

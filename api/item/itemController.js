@@ -34,7 +34,7 @@ module.exports = {
                 if (err) res.send(err)
                 res.status(200).json({
                     UPDATED: item,
-                    message: 'Update successfully'
+                    message: 'Update successfully',
                 })
             })
         })
@@ -48,7 +48,7 @@ module.exports = {
                 if (err) res.send(err)
                 res.status(200).json({
                     REMOVED: item,
-                    message: 'Delete Successfully'
+                    message: 'Delete Successfully',
                 })
             }
         )
