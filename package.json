@@ -12,7 +12,9 @@
     "test:all": "nyc npm run test:api",
     "dev": "nodemon app.js",
     "format:api": "npx prettier --write api/**/**.js",
-    "format:test": "npx prettier --write test/api/**/**.js"
+    "format:test": "npx prettier --write test/api/**/**.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "Ivan Fadila Putra <i.fadilaputra@gmail.com> (ffadilaputra.github.io)",
@@ -26,7 +28,8 @@
     "mongoose": "^5.4.10",
     "morgan": "*",
     "swagger-jsdoc": "^3.2.9",
-    "swagger-ui-express": "^4.0.1"
+    "swagger-ui-express": "^4.0.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -53,5 +56,6 @@
   "bugs": {
     "url": "https://github.com/ffadilaputra/mirana/issues"
   },
-  "homepage": "https://github.com/ffadilaputra/mirana#readme"
+  "homepage": "https://github.com/ffadilaputra/mirana#readme",
+  "snyk": true
 }
