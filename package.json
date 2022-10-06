@@ -29,7 +29,7 @@
     "morgan": "*",
     "swagger-jsdoc": "^3.2.9",
     "swagger-ui-express": "^4.0.1",
-    "snyk": "^1.189.0"
+    "snyk": "^1.996.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
