@@ -20,10 +20,10 @@
   "author": "Ivan Fadila Putra <i.fadilaputra@gmail.com> (ffadilaputra.github.io)",
   "license": "WTFPL",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "module-alias": "^2.2.0",
     "mongoose": "^5.4.10",
     "morgan": "*",
